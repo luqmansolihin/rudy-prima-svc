@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MechanicController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,4 +36,13 @@ Route::prefix('mechanics')->group(function () {
     Route::get('/{id}/edit', [MechanicController::class, 'edit'])->name('mechanics.edit');
     Route::put('/{id}', [MechanicController::class, 'update'])->name('mechanics.update');
     Route::delete('/{id}', [MechanicController::class, 'destroy'])->name('mechanics.destroy');
+});
+
+Route::prefix('suppliers')->group(function () {
+    Route::get('/', [SupplierController::class, 'index'])->name('suppliers.index');
+    Route::get('/create', [SupplierController::class, 'create'])->name('suppliers.create');
+    Route::post('/store', [SupplierController::class, 'store'])->name('suppliers.store');
+    Route::get('/{id}/edit', [SupplierController::class, 'edit'])->name('suppliers.edit');
+    Route::put('/{id}', [SupplierController::class, 'update'])->name('suppliers.update');
+    Route::delete('/{id}', [SupplierController::class, 'destroy'])->name('suppliers.destroy');
 });
