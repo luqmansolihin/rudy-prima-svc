@@ -3,6 +3,7 @@
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MechanicController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\SparepartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,4 +46,13 @@ Route::prefix('suppliers')->group(function () {
     Route::get('/{id}/edit', [SupplierController::class, 'edit'])->name('suppliers.edit');
     Route::put('/{id}', [SupplierController::class, 'update'])->name('suppliers.update');
     Route::delete('/{id}', [SupplierController::class, 'destroy'])->name('suppliers.destroy');
+});
+
+Route::prefix('spareparts')->group(function () {
+    Route::get('/', [SparepartController::class, 'index'])->name('spareparts.index');
+    Route::get('/create', [SparepartController::class, 'create'])->name('spareparts.create');
+    Route::post('/store', [SparepartController::class, 'store'])->name('spareparts.store');
+    Route::get('/{id}/edit', [SparepartController::class, 'edit'])->name('spareparts.edit');
+    Route::put('/{id}', [SparepartController::class, 'update'])->name('spareparts.update');
+    Route::delete('/{id}', [SparepartController::class, 'destroy'])->name('spareparts.destroy');
 });
