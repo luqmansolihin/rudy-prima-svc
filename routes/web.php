@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MechanicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,13 @@ Route::prefix('customers')->group(function () {
     Route::get('/{id}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
     Route::put('/{id}', [CustomerController::class, 'update'])->name('customers.update');
     Route::delete('/{id}', [CustomerController::class, 'destroy'])->name('customers.destroy');
+});
+
+Route::prefix('mechanics')->group(function () {
+    Route::get('/', [MechanicController::class, 'index'])->name('mechanics.index');
+    Route::get('/create', [MechanicController::class, 'create'])->name('mechanics.create');
+    Route::post('/store', [MechanicController::class, 'store'])->name('mechanics.store');
+    Route::get('/{id}/edit', [MechanicController::class, 'edit'])->name('mechanics.edit');
+    Route::put('/{id}', [MechanicController::class, 'update'])->name('mechanics.update');
+    Route::delete('/{id}', [MechanicController::class, 'destroy'])->name('mechanics.destroy');
 });

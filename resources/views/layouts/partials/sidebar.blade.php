@@ -11,7 +11,7 @@
     </div>
 
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-        <li class="nav-group {{ Route::is('customers.*') ? 'show' : '' }}">
+        <li class="nav-group {{ Route::is('customers.*', 'mechanics.*') ? 'show' : '' }}">
             <a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
                     <use xlink:href="{{ asset('coreui/vendors/@coreui/icons/svg/free.svg#cil-storage') }}"></use>
@@ -26,6 +26,15 @@
                             <span class="nav-icon-bullet"></span>
                         </span>
                         Customer
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::is('mechanics.*') ? 'active' : '' }}"
+                        href="{{ route('mechanics.index') }}">
+                        <span class="nav-icon">
+                            <span class="nav-icon-bullet"></span>
+                        </span>
+                        Mekanik
                     </a>
                 </li>
             </ul>
