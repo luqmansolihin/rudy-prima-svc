@@ -1,0 +1,32 @@
+/* DataTable Buttons - CoreUI aware */
+.dt-buttons .dt-btn-coreui {
+    --cui-btn-bg: var(--cui-body-bg);
+    --cui-btn-color: var(--cui-body-color);
+    --cui-btn-border-color: var(--cui-border-color);
+
+    background-color: var(--cui-btn-bg) !important;
+    color: var(--cui-btn-color) !important;
+    border: 1px solid var(--cui-btn-border-color) !important;
+}
+
+/* Hover */
+.dt-buttons .dt-btn-coreui:hover {
+    background-color: var(--cui-tertiary-bg) !important;
+}
+
+/* Hover */
+.dt-btn-coreui:hover {
+    background-color: var(
+        --cui-btn-hover-bg,
+        var(--cui-tertiary-bg)
+    ) !important;
+    color: var(--cui-body-color) !important;
+}
+
+/* Active */
+.dt-btn-coreui:active {
+    background-color: var(
+        --cui-btn-active-bg,
+        var(--cui-secondary-bg)
+    ) !important;
+}
